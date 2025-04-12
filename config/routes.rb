@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get "gallery" => "gallery#mine", as: :gallery
-  
   root "home#index"
+  get "myfriends" => "gallery#mine", as: :my_friends
+  get "friend/:id" => "gallery#show", as: :friend
+
+  
   resources :friends
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

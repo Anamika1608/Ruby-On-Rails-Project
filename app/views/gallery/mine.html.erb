@@ -1,9 +1,10 @@
 <div>
-  <h1 class="font-bold text-4xl">Gallery#mine</h1>
-  <p>Find me in app/views/gallery/mine.html.erb</p>
+  <h1 class="font-bold text-4xl">My Friends</h1>
   <% @friends.each do |friend| %>
     <div class="flex flex-col">
-      <h2 class="text-2xl font-bold text-indigo-700"><%= friend.first_name %></h2>
+      <a href=" friend/<%=(friend.id) %>" class="text-blue-500 hover:text-blue-700">
+        <%= friend.first_name + friend.last_name%>
+      </a>
       <p class="text-gray-600"><%= friend.email %></p>
       <p class="text-gray-600"><%= friend.phone %></p>
     </div>
