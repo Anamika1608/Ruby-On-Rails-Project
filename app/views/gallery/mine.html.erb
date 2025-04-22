@@ -1,12 +1,15 @@
 <div>
   <h1 class="font-bold text-4xl">My Friends</h1>
   <% @friends.each do |friend| %>
-    <div class="flex flex-col">
-      <a href=" friend/<%=(friend.id) %>" class="text-blue-500 hover:text-blue-700">
-        <%= friend.first_name + friend.last_name%>
+    <div class="flex flex-col mb-4">
+      <a href="/friend/<%= friend.id %>" class="text-blue-500 hover:text-blue-700 font-semibold">
+        <%= friend.first_name + " " + friend.last_name %>
       </a>
       <p class="text-gray-600"><%= friend.email %></p>
       <p class="text-gray-600"><%= friend.phone %></p>
     </div>
   <% end %>
+
+  <%= link_to "New Friend", new_friend_path %>
+   
 </div>

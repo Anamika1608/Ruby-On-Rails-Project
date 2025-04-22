@@ -2,7 +2,13 @@ Rails.application.routes.draw do
   root "home#index"
   get "myfriends" => "gallery#mine", as: :my_friends
   get "friend/:id" => "gallery#show", as: :friend
-
+  get "newfriend" => "gallery#new", as: :new_friend
+  post "createfriend" => "gallery#create", as: :create_friend
+  get "editfriend/:id" => "gallery#edit", as: :edit_friend
+  patch "updatefriend/:id" => "gallery#update", as: :update_friend
+  delete "deletefriend/:id" => "gallery#destroy", as: :delete_friend
+  get "search" => "gallery#search", as: :search_friends
+  get "friends" => "gallery#friends", as: :friends   
   
   resources :friends
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
